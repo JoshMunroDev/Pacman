@@ -9,10 +9,12 @@ canvas.height = innerHeight;
 
 
 class Boundary {
+    static width = 40
+    static height = 40
     constructor({ position }) {
-        this.position = position;
-        this.width = 40;
-        this.height = 40;
+        this.position = position
+        this.width = 40
+        this.height = 40
     }
 
     draw() {
@@ -58,8 +60,8 @@ const boundaries = []
 
 const player = new Player({
     position: {
-        x:40,
-        y:40 
+        x:Boundary.width + Boundary.width /2,
+        y:Boundary.height + Boundary.height /2    
     },
     velocity: {
         x:0,
@@ -73,8 +75,8 @@ map.forEach((row, i) => {
             case '-':
                 boundaries.push(new Boundary({
                     position: {
-                        x: 40 * j,
-                        y: 40 * i
+                        x: Boundary.width * j,
+                        y: Boundary.height * i
                     }
                 }))
                 break
